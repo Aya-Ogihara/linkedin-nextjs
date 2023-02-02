@@ -15,6 +15,9 @@ export default function Home() {
         <Link href='/contacts'>
           <button>Contact</button>
         </Link>
+        <Link href='/news'>
+          <button>News</button>
+        </Link>
       </main>
     </>
   );
