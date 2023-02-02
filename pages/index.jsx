@@ -1,8 +1,18 @@
 import Head from 'next/head';
 import { Navigation } from '@/components/Navigation';
 import Link from 'next/link';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const [query, setQuery] = useState();
+  const router = useRouter();
+  const handleOnChange = (e) => setQuery(e.target.value);
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    router.push(`/news/${query}`);
+  };
+
   return (
     <>
       <Head>
@@ -18,6 +28,12 @@ export default function Home() {
         <Link href='/news'>
           <button>News</button>
         </Link>
+        <div>
+          <h2>Search news</h2>
+          <form onSubmit={handleOnSubmit}>
+            <input type='text' onChange={handleOnChange} />
+          </form>
+        </div>
       </main>
     </>
   );
