@@ -24,6 +24,9 @@ export const Navigation = () => {
           <li>
             <Link href='/contacts'>Contacts</Link>
           </li>
+          <li>
+            <Link href='/news'>News</Link>
+          </li>
         </ul>
       </nav>
     </header>
