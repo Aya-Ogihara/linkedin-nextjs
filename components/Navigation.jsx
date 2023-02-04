@@ -3,6 +3,29 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const Navigation = () => {
+  const menuItems = [
+    {
+      title: 'Home',
+      path: '/',
+    },
+    {
+      title: 'Contacts',
+      path: '/contacts',
+    },
+    {
+      title: 'News',
+      path: '/news',
+    },
+    {
+      title: 'Top Stories',
+      path: '/news/top-stories',
+    },
+    {
+      title: 'Popular News',
+      path: '/news/popular',
+    },
+  ];
+
   return (
     <header className='header'>
       <div>
@@ -18,15 +41,11 @@ export const Navigation = () => {
       </div>
       <nav className='main-nav'>
         <ul>
-          <li>
-            <Link href='/'>Home</Link>
-          </li>
-          <li>
-            <Link href='/contacts'>Contacts</Link>
-          </li>
-          <li>
-            <Link href='/news'>News</Link>
-          </li>
+          {menuItems.map((item) => (
+            <li key={item.path}>
+              <Link href={item.path}>{item.title}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
