@@ -1,19 +1,27 @@
 import { handler } from '../api';
+import Head from 'next/head';
 
 const News = ({ results, title }) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <ul>
-        {results.map((result) => (
-          <li key={result.url}>
-            <a href={result.url} target='_blank' rel='noreferrer'>
-              {result.title}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name='description' content={title} />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+      </Head>
+      <div>
+        <h1>{title}</h1>
+        <ul>
+          {results.map((result) => (
+            <li key={result.url}>
+              <a href={result.url} target='_blank' rel='noreferrer'>
+                {result.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
