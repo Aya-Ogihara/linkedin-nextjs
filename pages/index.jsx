@@ -12,6 +12,17 @@ export default function Home() {
     router.push(`/news/${query}`);
   };
 
+  const links = [
+    {
+      path: 'top-stories',
+      title: 'Top Stories',
+    },
+    {
+      path: 'popular',
+      title: 'Popular News',
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -32,6 +43,13 @@ export default function Home() {
           <form onSubmit={handleOnSubmit}>
             <input type='text' onChange={handleOnChange} />
           </form>
+        </div>
+        <div>
+          {links.map((link) => (
+            <div key={link.path}>
+              <a href={`news/${link.path}`}>{link.title}</a>
+            </div>
+          ))}
         </div>
       </main>
     </>
