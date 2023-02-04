@@ -31,21 +31,21 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const API_KEY = process.env.NEW_YORK_TIMES_API_KEY;
-  const URL = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`;
-  const results = await handler(URL);
+  const TOP_STORIES_URL = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`;
+  const POPULAR_URL = `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${API_KEY}`;
 
   switch (params.path) {
     case 'top-stories':
       return {
         props: {
-          results,
+          results: await handler(TOP_STORIES_URL),
           title: 'Top Stories',
         },
       };
     case 'popular':
       return {
         props: {
-          results,
+          results: await handler(POPULAR_URL),
           title: 'Popular News',
         },
       };
