@@ -2,6 +2,9 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
 .header {
   padding: 1rem 2rem;
 }
