@@ -1,3 +1,4 @@
+import { GoBack } from '@/components/GoBack';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import contacts from '../api/contact';
@@ -7,9 +8,7 @@ const Contacts = () => {
 
   return (
     <main className='main'>
-      <a href='#' onClick={() => router.back()}>
-        Back
-      </a>
+      <GoBack />
       <h1>Contact page</h1>
       <ul>
         {contacts.map((contact) => (

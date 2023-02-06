@@ -1,3 +1,4 @@
+import { GoBack } from '@/components/GoBack';
 import { useRouter } from 'next/router';
 import contacts from '../api/contact';
 
@@ -8,9 +9,7 @@ const ContactId = () => {
 
   return (
     <main className='main'>
-      <a href='#' onClick={() => router.back()}>
-        Back
-      </a>
+      <GoBack />
       <h1>Name: {contact.name}</h1>
       <p>Country: {contact.country}</p>
     </main>

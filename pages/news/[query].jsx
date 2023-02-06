@@ -1,8 +1,10 @@
+import { GoBack } from '@/components/GoBack';
 import { search } from '../api';
 
 const News = ({ results, query }) => {
   return (
-    <div>
+    <main className='main'>
+      <GoBack />
       <h1>Search results for: {query}</h1>
       <ul>
         {results.map((result) => (
@@ -13,7 +15,7 @@ const News = ({ results, query }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 };
 

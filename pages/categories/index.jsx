@@ -1,10 +1,12 @@
 import { handler } from '../api';
 import Link from 'next/link';
+import { GoBack } from '@/components/GoBack';
 
 const Category = ({ results }) => {
   console.log(results);
   return (
-    <div>
+    <main className='main'>
+      <GoBack />
       <h1>Choose by Category</h1>
       <ul>
         {results.map((result) => (
@@ -15,7 +17,7 @@ const Category = ({ results }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 };
 

@@ -1,8 +1,10 @@
+import { GoBack } from '@/components/GoBack';
 import { handler } from '../api';
 
 const News = ({ results }) => {
   return (
-    <div>
+    <main className='main'>
+      <GoBack />
       <h1>News</h1>
       <ul>
         {results.map((result) => (
@@ -13,7 +15,7 @@ const News = ({ results }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 };
 
