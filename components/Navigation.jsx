@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import style from './Navigation.module.css';
+import { useRouter } from 'next/router';
 
 export const Navigation = () => {
   const menuItems = [
@@ -29,6 +31,7 @@ export const Navigation = () => {
       path: '/sections',
     },
   ];
+  const router = useRouter();
 
   return (
     <header className='header'>
@@ -45,11 +48,17 @@ export const Navigation = () => {
       </div>
       <nav className='main-nav'>
         <ul>
-          {menuItems.map((item) => (
-            <li key={item.path}>
-              <Link href={item.path}>{item.title}</Link>
-            </li>
-          ))}
+          {menuItems.map((item) => {
+            const styleName =
+              item.path === router.asPath
+                ? style.activeMenuItem
+                : style.menuItem;
+            return (
+              <li key={item.path} className={styleName}>
+                <Link href={item.path}>{item.title}</Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>

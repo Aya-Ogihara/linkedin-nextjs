@@ -1,0 +1,17 @@
+.menuItem a,
+.activeMenuItem a {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.menuItem a:hover {
+  text-decoration: underline;
+}
+
+.menuItem a {
+  color: #333;
+}
+
+.activeMenuItem a {
+  color: blue;
+}
