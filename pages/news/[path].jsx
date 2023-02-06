@@ -9,7 +9,7 @@ const News = ({ results, title }) => {
         <meta name='description' content={title} />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
-      <div>
+      <main className='main'>
         <h1>{title}</h1>
         <ul>
           {results.map((result) => (
@@ -20,7 +20,7 @@ const News = ({ results, title }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </main>
     </>
   );
 };

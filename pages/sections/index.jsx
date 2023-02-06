@@ -2,7 +2,7 @@ import { handler } from '../api';
 
 const Sections = ({ results }) => {
   return (
-    <div>
+    <main className='main'>
       <h1>Sections</h1>
       <ul>
         {results.map((result) => (
@@ -11,7 +11,7 @@ const Sections = ({ results }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 };
 

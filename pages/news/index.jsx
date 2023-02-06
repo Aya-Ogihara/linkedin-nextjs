@@ -2,7 +2,7 @@ import { handler } from '../api';
 
 const News = ({ results }) => {
   return (
-    <div>
+    <main className='main'>
       <h1>News</h1>
       <ul>
         {results.map((result) => (
@@ -13,7 +13,7 @@ const News = ({ results }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 };
 
