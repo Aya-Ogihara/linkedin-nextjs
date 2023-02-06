@@ -24,6 +24,10 @@ export const Navigation = () => {
       title: 'Popular News',
       path: '/news/popular',
     },
+    {
+      title: 'Sections',
+      path: '/sections',
+    },
   ];
 
   return (
