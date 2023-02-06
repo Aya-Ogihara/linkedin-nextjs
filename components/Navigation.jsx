@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { menuItems } from '@/utils/menu-items';
 
 export const Navigation = () => {
   return (
@@ -18,15 +19,11 @@ export const Navigation = () => {
       </div>
       <nav className='main-nav'>
         <ul>
-          <li>
-            <Link href='/'>Home</Link>
-          </li>
-          <li>
-            <Link href='/contacts'>Contacts</Link>
-          </li>
-          <li>
-            <Link href='/news'>News</Link>
-          </li>
+          {menuItems.map((item) => (
+            <li key={item.slug}>
+              <Link href={item.slug}>{item.title}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
